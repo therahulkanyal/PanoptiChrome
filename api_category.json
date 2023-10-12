@@ -1,0 +1,1579 @@
+{
+    "Audio Output Devices": {
+        "Properties": [
+            "HTMLMediaElement.sinkId"
+        ],
+        "Methods": [
+            "MediaDevices.selectAudioOutput",
+            "HTMLMediaElement.setSinkId",
+            "Window.matchMedia"
+        ]
+    },
+    "Background Tasks": {
+        "Interfaces": [
+            "IdleDetector",
+            "IdleDeadline",
+            "BackgroundFetchManager",
+            "BackgroundFetchRegistration",
+            "BackgroundFetchRecord",
+            "BackgroundFetchEvent",
+            "BackgroundFetchUpdateUIEvent",
+            "SyncManager",
+            "SyncEvent"
+        ],
+        "Methods": [
+            "Window.cancelIdleCallback",
+            "Window.requestIdleCallback",
+            "ServiceWorkerRegistration.sync",
+            "Window.setInterval",
+            "Window.setTimeout"
+        ]
+    },
+    "Barcode Detection": {
+        "Interfaces": [
+            "BarcodeDetector"
+        ],
+        "Methods": [
+            "BarcodeDetector.detect",
+            "BarcodeDetector.getSupportedFormats"
+        ]
+    },
+    "Battery": {
+        "Interfaces": [
+            "BatteryManager"
+        ],
+        "Methods": [
+            "Navigator.getBattery"
+        ]
+    },
+    "Beacon": {
+        "Methods": [
+            "Navigator.sendBeacon"
+        ]
+    },
+    "Bluetooth": {
+        "Interfaces": [
+            "BluetoothDevice",
+            "BluetoothRemoteGATTCharacteristic",
+            "BluetoothRemoteGATTServer",
+            "BluetoothRemoteGATTService",
+            "BluetoothUUID"
+        ]
+    },
+    "CSS Custom Highlight": {
+        "Interfaces": [
+            "Highlight",
+            "HighlightRegistry"
+        ],
+        "Properties": [
+            "CSS.highlights"
+        ]
+    },
+    "CSS Font Loading": {
+        "Interfaces": [
+            "FontFace",
+            "FontFaceSet",
+            "FontFaceSetLoadEvent"
+        ],
+        "Properties": [
+            "Document.fonts",
+            "WorkerGlobalScope.fonts"
+        ]
+    },
+    "CSS Painting": {
+        "Interfaces": [
+            "PaintWorkletGlobalScope",
+            "PaintRenderingContext2D",
+            "PaintSize"
+        ],
+        "Methods": [
+            "CSS.paintWorklet"
+        ]
+    },
+    "CSS Typed Object Model": {
+        "Interfaces": [
+            "CSSKeywordValue",
+            "CSSImageValue",
+            "CSSNumericValue",
+            "CSSStyleValue",
+            "CSSPositionValue",
+            "CSSTransformValue",
+            "CSSUnparsedValue",
+            "StylePropertyMap",
+            "StylePropertyMapReadOnly"
+        ]
+    },
+    "CSSOM": {
+        "Interfaces": [
+            "CSSUnitValue",
+            "CSSFontFaceRule",
+            "CSSContainerRule",
+            "CaretPosition",
+            "CSS",
+            "CSSCounterStyleRule",
+            "CSSConditionRule",
+            "CSSGroupingRule",
+            "CSSImportRule",
+            "CSSKeyframeRule",
+            "CSSKeyframesRule",
+            "CSSLayerBlockRule",
+            "CSSLayerStatementRule",
+            "CSSMediaRule",
+            "CSSNamespaceRule",
+            "CSSPageRule",
+            "CSSFontFeatureValuesRule",
+            "CSSFontPaletteValuesRule",
+            "CSSPropertyRule",
+            "CSSRule",
+            "CSSRuleList",
+            "CSSStyleDeclaration",
+            "CSSStyleRule",
+            "CSSStyleSheet",
+            "CSSSupportsRule",
+            "MediaList",
+            "MediaQueryList",
+            "StyleSheet",
+            "StyleSheetList",
+            "TransitionEvent"
+        ]
+    },
+    "Canvas": {
+        "Interfaces": [
+            "CanvasGradient",
+            "CanvasPattern",
+            "CanvasRenderingContext2D",
+            "OffscreenCanvasRenderingContext2D",
+            "HTMLCanvasElement",
+            "ImageBitmap",
+            "ImageBitmapRenderingContext",
+            "ImageData",
+            "OffscreenCanvas",
+            "Path2D",
+            "TextMetrics"
+        ],
+        "Methods": [
+            "createImageBitmap"
+        ]
+    },
+    "Channel Messaging": {
+        "Interfaces": [
+            "MessageChannel",
+            "MessagePort",
+            "BroadcastChannel"
+        ]
+    },
+    "Clipboard": {
+        "Interfaces": [
+            "Clipboard",
+            "ClipboardEvent",
+            "ClipboardItem"
+        ],
+        "Properties": [
+            "Navigator.clipboard"
+        ]
+    },
+    "Compression Streams": {
+        "Interfaces": [
+            "CompressionStream",
+            "DecompressionStream"
+        ]
+    },
+    "Console": {
+        "Interfaces": [
+            "Console"
+        ],
+        "Properties": [
+            "Window.console",
+            "WorkerGlobalScope.console"
+        ]
+    },
+    "Contact Picker": {
+        "Interfaces": [
+            "ContactsManager"
+        ],
+        "Properties": [
+            "Navigator.contacts"
+        ]
+    },
+    "Content Index": {
+        "Interfaces": [
+            "ContentIndex",
+            "ContentIndexEvent"
+        ],
+        "Properties": [
+            "ServiceWorkerRegistration.index"
+        ]
+    },
+    "Cookie": {
+        "Interfaces": [
+            "CookieStore",
+            "CookieStoreManager",
+            "CookieChangeEvent",
+            "ExtendableCookieChangeEvent"
+        ],
+        "Properties": [
+            "Window.cookieStore",
+            "Document.cookie"
+        ]
+    },
+    "Credential Management": {
+        "Interfaces": [
+            "Credential",
+            "CredentialsContainer",
+            "FederatedCredential",
+            "OTPCredential",
+            "PasswordCredential",
+            "PublicKeyCredential"
+        ]
+    },
+    "Device Orientation Events": {
+        "Interfaces": [
+            "DeviceMotionEvent",
+            "DeviceMotionEventAcceleration",
+            "DeviceMotionEventRotationRate",
+            "DeviceOrientationEvent"
+        ]
+    },
+    "Encoding": {
+        "Interfaces": [
+            "TextDecoder",
+            "TextEncoder",
+            "TextDecoderStream",
+            "TextEncoderStream"
+        ],
+        "Properties": [
+            "Window.btoa",
+            "Window.atob",
+            "Document.characterSet"
+        ]
+    },
+    "Encrypted Media Extensions": {
+        "Interfaces": [
+            "MediaEncryptedEvent",
+            "MediaKeyMessageEvent",
+            "MediaKeys",
+            "MediaKeySession",
+            "MediaKeyStatusMap",
+            "MediaKeySystemAccess"
+        ],
+        "Properties": [
+            "HTMLMediaElement.mediaKeys"
+        ],
+        "Methods": [
+            "Navigator.requestMediaKeySystemAccess",
+            "HTMLMediaElement.setMediaKeys"
+        ]
+    },
+    "EyeDropper": {
+        "Interfaces": [
+            "EyeDropper"
+        ]
+    },
+    "FedCM": {
+        "Interfaces": [
+            "IdentityCredential"
+        ],
+        "Methods": [
+            "CredentialsContainer.get"
+        ]
+    },
+    "Fetch": {
+        "Interfaces": [
+            "Headers",
+            "Request",
+            "Response"
+        ],
+        "Methods": [
+            "fetch"
+        ]
+    },
+    "File": {
+        "Interfaces": [
+            "Blob",
+            "File",
+            "FileList",
+            "FileReader",
+            "FileReaderSync"
+        ],
+        "Methods": [
+            "URL.createObjectURL",
+            "URL.revokeObjectURL"
+        ]
+    },
+    "File System": {
+        "Interfaces": [
+            "FileSystemDirectoryEntry",
+            "FileSystemDirectoryReader",
+            "FileSystemEntry",
+            "FileSystemFileEntry",
+            "FileSystem",
+            "FileSystemHandle",
+            "FileSystemFileHandle",
+            "FileSystemDirectoryHandle",
+            "FileSystemSyncAccessHandle",
+            "FileSystemWritableFileStream"
+        ],
+        "Methods": [
+            "window.showOpenFilePicker",
+            "window.showSaveFilePicker",
+            "window.showDirectoryPicker",
+            "DataTransferItem.getAsFileSystemHandle",
+            "StorageManager.getDirectory"
+        ]
+    },
+    "Fullscreen": {
+        "Properties": [
+            "Document.fullscreen",
+            "Document.fullscreenElement"
+        ],
+        "Methods": [
+            "Document.exitFullscreen",
+            "Element.requestFullscreen"
+        ]
+    },
+    "Gamepad": {
+        "Interfaces": [
+            "Gamepad",
+            "GamepadButton",
+            "GamepadEvent"
+        ],
+        "Methods": [
+            "Navigator.getGamepads"
+        ]
+    },
+    "Geolocation": {
+        "Interfaces": [
+            "Geolocation",
+            "GeolocationCoordinates",
+            "GeolocationPosition",
+            "GeolocationPositionError"
+        ],
+        "Properties": [
+            "Navigator.geolocation"
+        ]
+    },
+    "DOM": {
+        "Interfaces": [
+            "AbortController",
+            "AbstractRange",
+            "Attr",
+            "CDATASection",
+            "CharacterData",
+            "Comment",
+            "CustomEvent",
+            "CustomElementRegistry",
+            "Document",
+            "DocumentFragment",
+            "DocumentType",
+            "ShadowRoot",
+            "DOMError",
+            "DOMException",
+            "DOMImplementation",
+            "DOMMatrix",
+            "DOMMatrixReadOnly",
+            "DOMParser",
+            "DOMPoint",
+            "DOMQuad",
+            "DOMPointReadOnly",
+            "DOMRectReadOnly",
+            "DOMRect",
+            "DOMRectList",
+            "DOMStringList",
+            "DOMTokenList",
+            "Element",
+            "Event",
+            "EventTarget",
+            "HTMLCollection",
+            "NamedNodeMap",
+            "Node",
+            "NodeIterator",
+            "NodeList",
+            "ProcessingInstruction",
+            "Range",
+            "StaticRange",
+            "Text",
+            "TextDecoder",
+            "TextEncoder",
+            "TimeRanges",
+            "TreeWalker",
+            "XMLDocument",
+            "XSLTProcessor",
+            "Directive",
+            "MathMLElement",
+            "SubmitEvent",
+            "MediaError",
+            "AudioTrackList",
+            "XMLSerializer",
+            "HTMLAllCollection",
+            "BeforeUnloadEvent",
+            "DOMStringMap",
+            "ErrorEvent",
+            "HashChangeEvent",
+            "ImageData",
+            "HTMLSlotElement",
+            "HTMLAnchorElement",
+            "HTMLAreaElement",
+            "HTMLAudioElement",
+            "HTMLBaseElement",
+            "HTMLBodyElement",
+            "HTMLBRElement",
+            "HTMLButtonElement",
+            "HTMLDataElement",
+            "HTMLDataListElement",
+            "HTMLDialogElement",
+            "HTMLDivElement",
+            "HTMLDListElement",
+            "HTMLDocument",
+            "HTMLElement",
+            "HTMLEmbedElement",
+            "HTMLFieldSetElement",
+            "HTMLFormControlsCollection",
+            "HTMLFormElement",
+            "HTMLFrameSetElement",
+            "HTMLHeadElement",
+            "HTMLHeadingElement",
+            "HTMLHRElement",
+            "HTMLHtmlElement",
+            "HTMLIFrameElement",
+            "HTMLImageElement",
+            "HTMLInputElement",
+            "HTMLLabelElement",
+            "HTMLLegendElement",
+            "HTMLLIElement",
+            "HTMLLinkElement",
+            "HTMLMapElement",
+            "HTMLMediaElement",
+            "HTMLMetaElement",
+            "HTMLMeterElement",
+            "HTMLModElement",
+            "HTMLObjectElement",
+            "HTMLOListElement",
+            "HTMLOptGroupElement",
+            "HTMLOptionElement",
+            "HTMLOptionsCollection",
+            "HTMLOutputElement",
+            "HTMLParagraphElement",
+            "HTMLPictureElement",
+            "HTMLPreElement",
+            "HTMLProgressElement",
+            "HTMLQuoteElement",
+            "HTMLScriptElement",
+            "HTMLSelectElement",
+            "HTMLSourceElement",
+            "HTMLSpanElement",
+            "HTMLStyleElement",
+            "HTMLTableCaptionElement",
+            "HTMLTableCellElement",
+            "HTMLTableColElement",
+            "HTMLTableElement",
+            "HTMLTableRowElement",
+            "HTMLTableSectionElement",
+            "HTMLTextAreaElement",
+            "HTMLTemplateElement",
+            "HTMLTimeElement",
+            "HTMLTitleElement",
+            "HTMLTrackElement",
+            "HTMLUListElement",
+            "HTMLUnknownElement",
+            "HTMLVideoElement",
+            "HTMLDetailsElement",
+            "HTMLMenuElement",
+            "HTMLFrameElement",
+            "HTMLMarqueeElement",
+            "HTMLFontElement",
+            "HTMLParamElement",
+            "MessageChannel",
+            "ExtendableMessageEvent",
+            "MessagePort",
+            "PageTransitionEvent",
+            "PromiseRejectionEvent",
+            "RadioNodeList",
+            "UserActivation",
+            "ValidityState",
+            "Window",
+            "WorkletGlobalScope",
+            "XPathResult"
+        ]
+    },
+    "Plugin": {
+        "Interfaces": [
+            "Plugin",
+            "PluginArray",
+            "MimeType",
+            "MimeTypeArray"
+        ],
+        "Properties": [
+            "Navigator.plugins"
+        ]
+    },
+    "Screen": {
+        "Interfaces": [
+            "Screen",
+            "ScreenOrientation",
+            "WakeLock",
+            "WakeLockSentinel"
+        ],
+        "Properties": [
+            "Window.screen",
+            "Window.screenLeft",
+            "Window.screenTop",
+            "Window.screenX",
+            "Window.screenY",
+            "Window.scrollX",
+            "Window.scrollY",
+            "Window.outerHeight",
+            "Window.outerWidth",
+            "Window.pageXOffset",
+            "Window.pageYOffset",
+            "Window.innerHeight",
+            "Window.innerWidth",
+            "Window.devicePixelRatio",
+            "Window.orientation",
+            "Screen.orientation",
+            "Navigator.wakelock"
+        ]
+    },
+    "HTML Drag and Drop": {
+        "Interfaces": [
+            "DataTransfer",
+            "DataTransferItem",
+            "DataTransferItemList",
+            "DragEvent"
+        ]
+    },
+    "HTML Sanitizer": {
+        "Interfaces": [
+            "Sanitizer"
+        ]
+    },
+    "History": {
+        "Interfaces": [
+            "History",
+            "PopStateEvent"
+        ],
+        "Properties": [
+            "Window.history",
+            "PopStateEvent"
+        ]
+    },
+    "IndexedDB": {
+        "Interfaces": [
+            "Database",
+            "IDBCursor",
+            "IDBCursorWithValue",
+            "IDBDatabase",
+            "IDBFactory",
+            "IDBIndex",
+            "IDBKeyRange",
+            "IDBObjectStore",
+            "IDBOpenDBRequest",
+            "IDBRequest",
+            "IDBTransaction",
+            "IDBVersionChangeEvent"
+        ],
+        "Properties": [
+            "Window.indexedDB"
+        ]
+    },
+    "Ink": {
+        "Interfaces": [
+            "Ink",
+            "InkPresenter"
+        ],
+        "Properties": [
+            "Navigator.ink"
+        ]
+    },
+    "Intersection Observer": {
+        "Interfaces": [
+            "IntersectionObserver",
+            "IntersectionObserverEntry"
+        ]
+    },
+    "Keyboard": {
+        "Interfaces": [
+            "Keyboard",
+            "KeyboardLayoutMap"
+        ],
+        "Methods": [
+            "Navigator.keyboard"
+        ]
+    },
+    "Launch Handler": {
+        "Interfaces": [
+            "LaunchParams",
+            "LaunchQueue"
+        ],
+        "Properties": [
+            "Window.launchQueue"
+        ]
+    },
+    "Local Font Access": {
+        "Interfaces": [
+            "FontData"
+        ],
+        "Methods": [
+            "Window.queryLocalFonts"
+        ]
+    },
+    "Media Capture and Streams": {
+        "Interfaces": [
+            "MediaCapabilities",
+            "ImageCapture",
+            "CanvasCaptureMediaStreamTrack",
+            "MediaDevices",
+            "MediaStream",
+            "MediaStreamTrack",
+            "MediaStreamTrackEvent",
+            "MediaTrackConstraints",
+            "MediaTrackSettings",
+            "MediaTrackSupportedConstraints",
+            "MediaRecorder",
+            "MediaRecorderErrorEvent",
+            "BlobEvent"
+        ],
+        "Properties": [
+            "Navigator.mediaDevices",
+            "navigator.mediaCapabilities"
+        ],
+        "Methods": [
+            "HTMLCanvasElement.captureStream",
+            "MediaDevices.getUserMedia",
+            "mediaCapabilities.decodingInfo",
+            "mediaCapabilities.encodingInfo"
+        ]
+    },
+    "Media Session": {
+        "Interfaces": [
+            "MediaMetadata",
+            "MediaSession"
+        ],
+        "Properties": [
+            "navigator.mediaSession"
+        ]
+    },
+    "Media Source Extensions": {
+        "Interfaces": [
+            "VideoTrack",
+            "VideoTrackList",
+            "MediaSource",
+            "MediaSourceHandle",
+            "SourceBuffer",
+            "SourceBufferList",
+            "VideoPlaybackQuality"
+        ],
+        "Properties": [
+            "TextTrack.sourceBuffer"
+        ],
+        "Methods": [
+            "HTMLVideoElement.getVideoPlaybackQuality",
+            "URL.createObjectURL"
+        ]
+    },
+    "Navigation": {
+        "Interfaces": [
+            "NavigateEvent",
+            "Navigation",
+            "NavigationCurrentEntryChangeEvent",
+            "NavigationDestination",
+            "NavigationHistoryEntry",
+            "NavigationTransition",
+            "NavigationPreloadManager"
+        ],
+        "Properties": [
+            "Window.navigation"
+        ]
+    },
+    "Network Information": {
+        "Interfaces": [
+            "NetworkInformation"
+        ],
+        "Properties": [
+            "Navigator.connection"
+        ]
+    },
+    "Page Visibility": {
+        "Properties": [
+            "Document.hidden",
+            "Document.visibilityState"
+        ]
+    },
+    "Payment": {
+        "Interfaces": [
+            "MerchantValidationEvent",
+            "PaymentAddress",
+            "PaymentMethodChangeEvent",
+            "PaymentRequest",
+            "PaymentRequestUpdateEvent",
+            "PaymentResponse",
+            "CanMakePaymentEvent",
+            "PaymentManager",
+            "PaymentRequestEvent"
+        ],
+        "Properties": [
+            "ServiceWorkerRegistration.paymentManager",
+            "HTMLIFrameElement.allowPaymentRequest"
+        ]
+    },
+    "Performance": {
+        "Interfaces": [
+            "EventCounts",
+            "LargestContentfulPaint",
+            "LayoutShift",
+            "LayoutShiftAttribution",
+            "Performance",
+            "PerformanceEntry",
+            "PerformanceElementTiming",
+            "PerformanceEventTiming",
+            "PerformanceLongTaskTiming",
+            "PerformanceMark",
+            "PerformanceMeasure",
+            "PerformanceNavigation",
+            "PerformanceNavigationTiming",
+            "PerformanceObserver",
+            "PerformanceObserverEntryList",
+            "PerformancePaintTiming",
+            "PerformanceResourceTiming",
+            "PerformanceServerTiming",
+            "PerformanceTiming",
+            "TaskAttributionTiming",
+            "VisibilityStateEntry",
+            "MemoryInfo"
+        ],
+        "Properties": [
+            "Window.performance"
+        ]
+    },
+    "Permissions": {
+        "Interfaces": [
+            "FeaturePolicy",
+            "Permissions",
+            "PermissionStatus"
+        ],
+        "Properties": [
+            "Navigator.permissions",
+            "WorkerNavigator.permissions"
+        ]
+    },
+    "Picture-in-Picture": {
+        "Interfaces": [
+            "PictureInPictureWindow"
+        ],
+        "Properties": [
+            "HTMLVideoElement.disablePictureInPicture",
+            "Document.pictureInPictureEnabled",
+            "Document.pictureInPictureElement"
+        ],
+        "Methods": [
+            "HTMLVideoElement.requestPictureInPicture",
+            "Document.exitPictureInPicture"
+        ]
+    },
+    "Pointer": {
+        "Interfaces": [
+            "PointerEvent"
+        ],
+        "Properties": [
+            "Navigator.maxTouchPoints",
+            "Document.pointerLockElement"
+        ],
+        "Methods": [
+            "Element.setPointerCapture",
+            "Element.releasePointerCapture",
+            "Element.requestPointerLock",
+            "Document.exitPointerLock"
+        ]
+    },
+    "Popover": {
+        "Interfaces": [
+            "ToggleEvent"
+        ],
+        "Properties": [
+            "HTMLButtonElement.popoverTargetAction",
+            "HTMLButtonElement.popoverTargetElement",
+            "HTMLElement.popover",
+            "HTMLInputElement.popoverTargetAction",
+            "HTMLInputElement.popoverTargetElement"
+        ],
+        "Methods": [
+            "HTMLElement.hidePopover",
+            "HTMLElement.showPopover",
+            "HTMLElement.togglePopover"
+        ]
+    },
+    "Presentation": {
+        "Interfaces": [
+            "Presentation",
+            "PresentationAvailability",
+            "PresentationDeviceInfoManager",
+            "PresentationRequest",
+            "PresentationSession",
+            "PresentationSessionConnectEvent"
+        ],
+        "Properties": [
+            "Navigator.presentation",
+            "Navigator.mozPresentationDeviceInfo"
+        ]
+    },
+    "Prioritized Task Scheduling": {
+        "Interfaces": [
+            "Scheduler",
+            "Scheduling",
+            "TaskController",
+            "TaskSignal",
+            "AbortSignal",
+            "TaskPriorityChangeEvent"
+        ],
+        "Properties": [
+            "Navigator.scheduling",
+            "Window.scheduler"
+        ]
+    },
+    "Push": {
+        "Interfaces": [
+            "PushManager",
+            "PushSubscription",
+            "PushEvent",
+            "PushMessageData"
+        ],
+        "Properties": [
+            "ServiceWorkerRegistration.pushManager"
+        ]
+    },
+    "Reporting": {
+        "Interfaces": [
+            "SecurityPolicyViolationEvent",
+            "CSPViolationReportBody",
+            "DeprecationReportBody",
+            "InterventionReportBody",
+            "Report",
+            "ReportBody",
+            "ReportError",
+            "ReportingObserver"
+        ]
+    },
+    "Resize Observer": {
+        "Interfaces": [
+            "ResizeObserver",
+            "ResizeObserverSize",
+            "ResizeObserverEntry"
+        ]
+    },
+    "Screen Capture": {
+        "Interfaces": [
+            "CaptureController"
+        ],
+        "Properties": [
+            "MediaTrackConstraints.displaySurface",
+            "MediaTrackConstraints.logicalSurface",
+            "MediaTrackConstraints.suppressLocalAudioPlayback",
+            "MediaTrackSettings.cursor",
+            "MediaTrackSettings.displaySurface",
+            "MediaTrackSettings.logicalSurface",
+            "MediaTrackSettings.suppressLocalAudioPlayback",
+            "MediaTrackSupportedConstraints.displaySurface",
+            "MediaTrackSupportedConstraints.logicalSurface",
+            "MediaTrackSupportedConstraints.suppressLocalAudioPlayback"
+        ],
+        "Methods": [
+            "MediaDevices.getDisplayMedia"
+        ]
+    },
+    "Selection": {
+        "Interfaces": [
+            "Selection"
+        ],
+        "Methods": [
+            "Document.getSelection",
+            "Window.getSelection"
+        ]
+    },
+    "Sensor": {
+        "Interfaces": [
+            "AbsoluteOrientationSensor",
+            "Accelerometer",
+            "AmbientLightSensor",
+            "GravitySensor",
+            "Gyroscope",
+            "LinearAccelerationSensor",
+            "Magnetometer",
+            "OrientationSensor",
+            "RelativeOrientationSensor",
+            "Sensor",
+            "SensorErrorEvent"
+        ]
+    },
+    "Server Sent Events": {
+        "Interfaces": [
+            "EventSource"
+        ]
+    },
+    "Service Workers": {
+        "Interfaces": [
+            "Cache",
+            "CacheStorage",
+            "Client",
+            "Clients",
+            "ExtendableEvent",
+            "FetchEvent",
+            "InstallEvent",
+            "NotificationEvent",
+            "PeriodicSyncEvent",
+            "PeriodicSyncManager",
+            "ServiceWorker",
+            "ServiceWorkerContainer",
+            "ServiceWorkerGlobalScope",
+            "ServiceWorkerRegistration",
+            "SyncEvent",
+            "SyncManager",
+            "WindowClient"
+        ],
+        "Properties": [
+            "Navigator.serviceWorker"
+        ]
+    },
+    "Storage": {
+        "Interfaces": [
+            "SharedStorage",
+            "StorageManager",
+            "DeprecatedStorageQuota"
+        ],
+        "Properties": [
+            "Navigator.storage",
+            "WorkerNavigator.storage"
+        ],
+        "Methods": [
+            "Document.hasStorageAccess",
+            "Document.requestStorageAccess"
+        ]
+    },
+    "Streams": {
+        "Interfaces": [
+            "ByteLengthQueuingStrategy",
+            "CountQueuingStrategy",
+            "ReadableByteStreamController",
+            "ReadableStream",
+            "ReadableStreamBYOBReader",
+            "ReadableStreamBYOBRequest",
+            "ReadableStreamDefaultController",
+            "ReadableStreamDefaultReader",
+            "TransformStream",
+            "TransformStreamDefaultController",
+            "WritableStream",
+            "WritableStreamDefaultController",
+            "WritableStreamDefaultWriter"
+        ],
+        "Properties": [
+            "Response.body"
+        ]
+    },
+    "Touch Events": {
+        "Interfaces": [
+            "Touch",
+            "TouchEvent",
+            "TouchList"
+        ]
+    },
+    "Trusted Types": {
+        "Interfaces": [
+            "TrustedHTML",
+            "TrustedScript",
+            "TrustedScriptURL",
+            "TrustedTypePolicy",
+            "TrustedTypePolicyFactory"
+        ],
+        "Properties": [
+            "Window.trustedTypes"
+        ]
+    },
+    "UI Events": {
+        "Interfaces": [
+            "CompositionEvent",
+            "FocusEvent",
+            "InputEvent",
+            "KeyboardEvent",
+            "MouseEvent",
+            "MouseScrollEvent",
+            "MutationEvent",
+            "UIEvent",
+            "WheelEvent"
+        ]
+    },
+    "Mutation": {
+        "Interfaces": [
+            "MutationObserver",
+            "MutationRecord"
+        ]
+    },
+    "URL": {
+        "Interfaces": [
+            "URL",
+            "URLSearchParams",
+            "URLPattern"
+        ]
+    },
+    "User Agent": {
+        "Interfaces": [
+            "Navigator",
+            "NavigatorUAData"
+        ],
+        "Properties": [
+            "Window.navigator",
+            "Window.clientInformation"
+        ]
+    },
+    "Vibration": {
+        "Methods": [
+            "Navigator.vibrate"
+        ]
+    },
+    "View Transitions": {
+        "Interfaces": [
+            "ViewTransition"
+        ],
+        "Methods": [
+            "Document.startViewTransition"
+        ]
+    },
+    "VirtualKeyboard": {
+        "Interfaces": [
+            "VirtualKeyboard"
+        ]
+    },
+    "Visual Viewport": {
+        "Interfaces": [
+            "VisualViewport"
+        ],
+        "Properties": [
+            "Window.visualViewport"
+        ]
+    },
+    "Web Animations": {
+        "Interfaces": [
+            "Animation",
+            "AnimationEffect",
+            "AnimationEvent",
+            "AnimationTimeline",
+            "AnimationPlaybackEvent",
+            "DocumentTimeline",
+            "KeyframeEffect",
+            "ScrollTimeline",
+            "ViewTimeline"
+        ],
+        "Properties": [
+            "Document.timeline"
+        ],
+        "Methods": [
+            "Document.getAnimations",
+            "Element.animate",
+            "Element.getAnimations"
+        ]
+    },
+    "Web Audio": {
+        "Interfaces": [
+            "AnalyserNode",
+            "AudioBuffer",
+            "AudioBufferSourceNode",
+            "AudioContext",
+            "AudioDestinationNode",
+            "AudioListener",
+            "AudioNode",
+            "AudioParam",
+            "AudioProcessingEvent",
+            "AudioScheduledSourceNode",
+            "AudioSinkInfo",
+            "AudioWorklet",
+            "AudioWorkletGlobalScope",
+            "AudioWorkletNode",
+            "AudioWorkletProcessor",
+            "BaseAudioContext",
+            "BiquadFilterNode",
+            "ChannelMergerNode",
+            "ChannelSplitterNode",
+            "ConstantSourceNode",
+            "ConvolverNode",
+            "DelayNode",
+            "DynamicsCompressorNode",
+            "GainNode",
+            "IIRFilterNode",
+            "MediaElementAudioSourceNode",
+            "MediaStreamAudioDestinationNode",
+            "MediaStreamAudioSourceNode",
+            "OfflineAudioCompletionEvent",
+            "OfflineAudioContext",
+            "OscillatorNode",
+            "PannerNode",
+            "PeriodicWave",
+            "WaveShaperNode",
+            "StereoPannerNode"
+        ]
+    },
+    "Web Authentication": {
+        "Interfaces": [
+            "PublicKeyCredential",
+            "AuthenticatorResponse",
+            "AuthenticatorAttestationResponse",
+            "AuthenticatorAssertionResponse"
+        ],
+        "Methods": [
+            "CredentialsContainer.create",
+            "CredentialsContainer.get"
+        ]
+    },
+    "Web Components": {
+        "Properties": [
+            "Element.shadowRoot",
+            "Element.slot",
+            "Event.composed",
+            "Event.composedPath",
+            "Node.isConnected",
+            "Window.customElements"
+        ],
+        "Methods": [
+            "Element.attachShadow"
+        ]
+    },
+    "Web Crypto": {
+        "Interfaces": [
+            "Crypto",
+            "CryptoKey",
+            "SubtleCrypto"
+        ],
+        "Properties": [
+            "Window.crypto"
+        ]
+    },
+    "Web Locks": {
+        "Interfaces": [
+            "Lock",
+            "LockManager"
+        ]
+    },
+    "Web MIDI": {
+        "Interfaces": [
+            "MIDIInputMap",
+            "MIDIOutputMap",
+            "MIDIAccess",
+            "MIDIPort",
+            "MIDIInput",
+            "MIDIOutput",
+            "MIDIMessageEvent",
+            "MIDIConnectionEvent"
+        ],
+        "Methods": [
+            "Navigator.requestMIDIAccess"
+        ]
+    },
+    "Web NFC": {
+        "Interfaces": [
+            "NDEFMessage",
+            "NDEFReader",
+            "NDEFRecord"
+        ]
+    },
+    "Web Notifications": {
+        "Interfaces": [
+            "Notification",
+            "NotificationEvent"
+        ],
+        "Methods": [
+            "ServiceWorkerRegistration.showNotification",
+            "ServiceWorkerRegistration.getNotifications"
+        ]
+    },
+    "Web Share": {
+        "Methods": [
+            "Navigator.canShare",
+            "Navigator.share"
+        ]
+    },
+    "Web Speech": {
+        "Interfaces": [
+            "SpeechGrammar",
+            "SpeechGrammarList",
+            "SpeechRecognition",
+            "SpeechRecognitionAlternative",
+            "SpeechRecognitionErrorEvent",
+            "SpeechRecognitionEvent",
+            "SpeechRecognitionResult",
+            "SpeechRecognitionResultList",
+            "SpeechSynthesis",
+            "SpeechSynthesisErrorEvent",
+            "SpeechSynthesisEvent",
+            "SpeechSynthesisUtterance",
+            "SpeechSynthesisVoice"
+        ]
+    },
+    "Web Storage": {
+        "Interfaces": [
+            "Storage",
+            "StorageEvent"
+        ],
+        "Properties": [
+            "Window.sessionStorage",
+            "Window.localStorage"
+        ]
+    },
+    "Location": {
+        "Interfaces": [
+            "Location"
+        ],
+        "Properties": [
+            "Document.URL",
+            "HTMLDocument.location",
+            "HTMLAnchorElement.hostname",
+            "Document.domain",
+            "Window.location",
+            "Window.origin",
+            "Window.name",
+            "Window.parent",
+            "Window.top",
+            "Node.baseURI",
+            "Document.referrer"
+        ]
+    },
+    "Web Workers": {
+        "Interfaces": [
+            "DedicatedWorkerGlobalScope",
+            "SharedWorker",
+            "SharedWorkerGlobalScope",
+            "Worker",
+            "Worklet",
+            "WorkerGlobalScope",
+            "WorkerLocation",
+            "WorkerNavigator"
+        ]
+    },
+    "WebCodecs": {
+        "Interfaces": [
+            "AudioData",
+            "AudioDecoder",
+            "AudioEncoder",
+            "EncodedAudioChunk",
+            "EncodedVideoChunk",
+            "ImageDecoder",
+            "ImageTrack",
+            "ImageTrackList",
+            "VideoDecoder",
+            "VideoEncoder",
+            "VideoColorSpace",
+            "VideoFrame"
+        ],
+        "Properties": [
+            "HTMLMediaElement.canPlayType"
+        ]
+    },
+    "WebGL": {
+        "Interfaces": [
+            "WebGLLoseContext",
+            "WebGLRenderingContext",
+            "WebGLBuffer",
+            "WebGLFramebuffer",
+            "WebGLRenderbuffer",
+            "WebGLObject",
+            "WebGLProgram",
+            "WebGLShader",
+            "WebGLTexture",
+            "WebGLUniformLocation",
+            "WebGLActiveInfo",
+            "WebGLShaderPrecisionFormat",
+            "WebGLContextEvent",
+            "WebGLQuery",
+            "WebGLSampler",
+            "WebGLSync",
+            "WebGLTransformFeedback",
+            "WebGLVertexArrayObject",
+            "WebGL2RenderingContext",
+            "WEBGL_compressed_texture_s3tc",
+            "WEBGL_compressed_texture_s3tc_srgb",
+            "WEBGL_compressed_texture_etc1",
+            "WEBGL_compressed_texture_pvrtc",
+            "WEBGL_debug_renderer_info",
+            "WEBGL_debug_shaders",
+            "WEBGL_depth_texture",
+            "OES_element_index_uint",
+            "EXT_frag_depth",
+            "WEBGL_lose_context",
+            "EXT_texture_filter_anisotropic",
+            "EXT_sRGB",
+            "OES_standard_derivatives",
+            "OES_texture_float",
+            "WEBGL_draw_buffers",
+            "OES_texture_float_linear",
+            "EXT_shader_texture_lod",
+            "OES_texture_half_float",
+            "OES_texture_half_float_linear",
+            "WEBGL_color_buffer_float",
+            "EXT_color_buffer_half_float",
+            "OES_vertex_array_object",
+            "ANGLE_instanced_arrays",
+            "EXT_blend_minmax",
+            "EXT_disjoint_timer_query",
+            "OES_draw_buffers_indexed"
+        ]
+    },
+    "WebGPU": {
+        "Interfaces": [
+            "GPU",
+            "GPUAdapter",
+            "GPUAdapterInfo",
+            "GPUBindGroup",
+            "GPUBindGroupLayout",
+            "GPUBuffer",
+            "GPUCanvasContext",
+            "GPUCommandBuffer",
+            "GPUCommandEncoder",
+            "GPUCompilationInfo",
+            "GPUCompilationMessage",
+            "GPUComputePassEncoder",
+            "GPUComputePipeline",
+            "GPUDevice",
+            "GPUDeviceLostInfo",
+            "GPUError",
+            "GPUExternalTexture",
+            "GPUInternalError",
+            "GPUOutOfMemoryError",
+            "GPUPipelineError",
+            "GPUPipelineLayout",
+            "GPUQuerySet",
+            "GPUQueue",
+            "GPURenderBundle",
+            "GPURenderBundleEncoder",
+            "GPURenderPassEncoder",
+            "GPURenderPipeline",
+            "GPUSampler",
+            "GPUShaderModule",
+            "GPUSupportedFeatures",
+            "GPUSupportedLimits",
+            "GPUTexture",
+            "GPUTextureView",
+            "GPUUncapturedErrorEvent",
+            "GPUValidationError"
+        ],
+        "Properties": [
+            "Navigator.gpu",
+            "WorkerNavigator.gpu"
+        ],
+        "Methods": [
+            "HTMLCanvasElement.getContext"
+        ]
+    },
+    "WebHID": {
+        "Interfaces": [
+            "HID",
+            "HIDDevice",
+            "HIDInputReportEvent",
+            "HIDConnectionEvent"
+        ],
+        "Properties": [
+            "Navigator.hid"
+        ]
+    },
+    "WebOTP": {
+        "Interfaces": [
+            "OTPCredential"
+        ],
+        "Methods": [
+            "CredentialsContainer.get"
+        ]
+    },
+    "WebRTC": {
+        "Interfaces": [
+            "MediaDeviceInfo",
+            "RTCPeerConnection",
+            "RTCSessionDescription",
+            "RTCIceCandidate",
+            "RTCPeerConnectionIceEvent",
+            "RTCPeerConnectionIceErrorEvent",
+            "RTCCertificate",
+            "RTCRtpSender",
+            "RTCRtpReceiver",
+            "RTCRtpTransceiver",
+            "RTCDtlsTransport",
+            "RTCIceTransport",
+            "RTCTrackEvent",
+            "RTCSctpTransport",
+            "RTCDataChannel",
+            "RTCDataChannelEvent",
+            "RTCDTMFSender",
+            "RTCDTMFToneChangeEvent",
+            "RTCStatsReport",
+            "RTCErrorEvent"
+        ]
+    },
+    "WebTransport": {
+        "Interfaces": [
+            "WebTransport",
+            "WebTransportBidirectionalStream",
+            "WebTransportDatagramDuplexStream",
+            "WebTransportReceiveStream",
+            "WebTransportError"
+        ]
+    },
+    "WebUSB": {
+        "Interfaces": [
+            "USB",
+            "USBAlternateInterface",
+            "USBConfiguration",
+            "USBConnectionEvent",
+            "USBDevice",
+            "USBEndPoint",
+            "USBInterface",
+            "USBInTransferResult",
+            "USBIsochronousInTransferPacket",
+            "USBIsochronousInTransferResult",
+            "USBIsochronousOutTransferPacket",
+            "USBIsochronousOutTransferResult",
+            "USBOutTransferResult"
+        ]
+    },
+    "WebVR": {
+        "Interfaces": [
+            "VRDisplay",
+            "VRDisplayCapabilities",
+            "VRDisplayEvent",
+            "VRFrameData",
+            "VRPose",
+            "VREyeParameters",
+            "VRFieldOfView",
+            "VRLayerInit",
+            "VRStageParameters"
+        ],
+        "Properties": [
+            "Gamepad.displayId",
+            "Navigator.activeVRDisplays"
+        ],
+        "Methods": [
+            "Navigator.getVRDisplays"
+        ]
+    },
+    "WebVTT": {
+        "Interfaces": [
+            "VTTCue",
+            "VTTRegion",
+            "TextTrack",
+            "TextTrackCue",
+            "TextTrackCueList",
+            "TextTrackList",
+            "TrackEvent"
+        ]
+    },
+    "WebXR Device": {
+        "Interfaces": [
+            "XRAnchor",
+            "XRBoundedReferenceSpace",
+            "XRCPUDepthInformation",
+            "XRDepthInformation",
+            "XRFrame",
+            "XRInputSource",
+            "XRInputSourceArray",
+            "XRInputSourceEvent",
+            "XRInputSourcesChangeEvent",
+            "XRPose",
+            "XRReferenceSpace",
+            "XRReferenceSpaceEvent",
+            "XRRenderState",
+            "XRRigidTransform",
+            "XRSession",
+            "XRSessionEvent",
+            "XRSpace",
+            "XRSystem",
+            "XRView",
+            "XRViewerPose",
+            "XRViewport",
+            "XRWebGLBinding",
+            "XRWebGLDepthInformation",
+            "XRWebGLLayer"
+        ],
+        "Properties": [
+            "Navigator.xr"
+        ],
+        "Methods": [
+            "WebGLRenderingContext.makeXRCompatible"
+        ]
+    },
+    "Websockets": {
+        "Interfaces": [
+            "WebSocket",
+            "CloseEvent",
+            "MessageEvent"
+        ]
+    },
+    "Window Controls Overlay": {
+        "Interfaces": [
+            "WindowControlsOverlay"
+        ],
+        "Properties": [
+            "Navigator.windowControlsOverlay"
+        ]
+    },
+    "XMLHttpRequest": {
+        "Interfaces": [
+            "FormData",
+            "ProgressEvent",
+            "XMLHttpRequest",
+            "XMLHttpRequestEventTarget",
+            "XMLHttpRequestUpload"
+        ]
+    },
+    "SVG": {
+        "Interfaces": [
+            "SVGMatrix",
+            "SVGPoint",
+            "SVGAnimatedTransformList",
+            "SVGTransform",
+            "SVGTransformList",
+            "SVGMaskElement",
+            "SVGAnimatedString",
+            "SVGFEOffsetElement",
+            "SVGLinearGradientElement",
+            "SVGStopElement",
+            "SVGFEFloodElement",
+            "SVGPolylineElement",
+            "SVGFEBlendElement",
+            "SVGPatternElement",
+            "SVGGraphicsElement",
+            "SVGRadialGradientElement",
+            "SVGGeometryElement",
+            "SVGRect",
+            "SVGRectElement",
+            "SVGEllipseElement",
+            "SVGFECompositeElement",
+            "SVGElement",
+            "SVGFEFuncRElement",
+            "SVGFEComponentTransferElement",
+            "SVGFilterElement",
+            "SVGSVGElement",
+            "SVGFEFuncAElement",
+            "SVGUseElement",
+            "SVGAnimateTransformElement",
+            "SVGFEMergeElement",
+            "SVGFEColorMatrixElement",
+            "SVGFEMorphologyElement",
+            "SVGImageElement",
+            "SVGFEFuncGElement",
+            "SVGAnimateElement",
+            "SVGStyleElement",
+            "SVGScriptElement",
+            "SVGSymbolElement",
+            "SVGFEMergeNodeElement",
+            "SVGMetadataElement",
+            "SVGTSpanElement",
+            "SVGDescElement",
+            "SVGCircleElement",
+            "SVGTitleElement",
+            "SVGPathElement",
+            "SVGTextElement",
+            "SVGGElement",
+            "SVGFEGaussianBlurElement",
+            "SVGMarkerElement",
+            "SVGAElement",
+            "SVGPolygonElement",
+            "SVGFEFuncBElement",
+            "SVGClipPathElement",
+            "SVGDefsElement",
+            "SVGLineElement",
+            "SVGForeignObjectElement"
+        ]
+    }
+}
