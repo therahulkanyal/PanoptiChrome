@@ -1,5 +1,7 @@
 # List of all leaked APIs
 
+| API Name    |
+| ----------- |
 | AbortController.signal |
 | AnimationTimeline.currentTime |
 | Attr.name |

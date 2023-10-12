@@ -1,269 +1,273 @@
-AbortController.signal
-Attr.name
-Attr.value
-CharacterData.data
-CustomElementRegistry.whenDefined
-CustomEvent.detail
-DOMException.code
-DOMException.message
-DOMException.name
-DOMImplementation.createHTMLDocument
-DOMMatrix.m41
-DOMMatrix.m42
-DOMParser.parseFromString
-DOMRect.height
-DOMRect.width
-DOMRect.x
-DOMRect.y
-DOMRectList.length
-DOMRectReadOnly.bottom
-DOMRectReadOnly.height
-DOMRectReadOnly.left
-DOMRectReadOnly.right
-DOMRectReadOnly.top
-DOMRectReadOnly.width
-DOMRectReadOnly.x
-DOMStringList.length
-DOMTokenList.length
-DOMTokenList.value
-Document.activeElement
-Document.adoptedStyleSheets
-Document.all
-Document.body
-Document.charset
-Document.children
-Document.compatMode
-Document.contentType
-Document.createAttribute
-Document.createComment
-Document.createDocumentFragment
-Document.createElement
-Document.createElementNS
-Document.createEvent
-Document.createRange
-Document.createTextNode
-Document.createTreeWalker
-Document.currentScript
-Document.defaultView
-Document.dir
-Document.doctype
-Document.documentElement
-Document.elementFromPoint
-Document.evaluate
-Document.featurePolicy
-Document.firstElementChild
-Document.forms
-Document.getElementById
-Document.getElementsByClassName
-Document.getElementsByName
-Document.getElementsByTagName
-Document.head
-Document.images
-Document.implementation
-Document.importNode
-Document.inputEncoding
-Document.lastModified
-Document.links
-Document.open
-Document.querySelector
-Document.querySelectorAll
-Document.readyState
-Document.scripts
-Document.scrollingElement
-Document.styleSheets
-Document.title
-Document.webkitVisibilityState
-DocumentFragment.children
-DocumentFragment.querySelector
-DocumentFragment.querySelectorAll
-DocumentType.name
-Element.attributes
-Element.childElementCount
-Element.children
-Element.classList
-Element.className
-Element.clientHeight
-Element.clientLeft
-Element.clientTop
-Element.clientWidth
-Element.closest
-Element.firstElementChild
-Element.getAttribute
-Element.getBoundingClientRect
-Element.getClientRects
-Element.getElementsByClassName
-Element.getElementsByTagName
-Element.id
-Element.innerHTML
-Element.insertAdjacentElement
-Element.lastElementChild
-Element.localName
-Element.namespaceURI
-Element.nextElementSibling
-Element.outerHTML
-Element.prefix
-Element.previousElementSibling
-Element.querySelector
-Element.querySelectorAll
-Element.scrollHeight
-Element.scrollLeft
-Element.scrollTop
-Element.scrollWidth
-Element.tagName
-ErrorEvent.colno
-ErrorEvent.error
-ErrorEvent.filename
-ErrorEvent.lineno
-ErrorEvent.message
-Event.currentTarget
-Event.eventPhase
-Event.srcElement
-Event.target
-Event.timeStamp
-Event.type
-HTMLAnchorElement.hash
-HTMLAnchorElement.host
-HTMLAnchorElement.href
-HTMLAnchorElement.origin
-HTMLAnchorElement.pathname
-HTMLAnchorElement.protocol
-HTMLAnchorElement.search
-HTMLButtonElement.type
-HTMLCollection.item
-HTMLCollection.length
-HTMLCollection.namedItem
-HTMLElement.accessKey
-HTMLElement.dataset
-HTMLElement.dir
-HTMLElement.innerText
-HTMLElement.lang
-HTMLElement.nonce
-HTMLElement.offsetHeight
-HTMLElement.offsetLeft
-HTMLElement.offsetParent
-HTMLElement.offsetTop
-HTMLElement.offsetWidth
-HTMLElement.onclick
-HTMLElement.outerText
-HTMLElement.style
-HTMLElement.tabIndex
-HTMLFormControlsCollection.namedItem
-HTMLFormElement.action
-HTMLFormElement.elements
-HTMLFormElement.enctype
-HTMLFormElement.length
-HTMLFormElement.name
-HTMLIFrameElement.contentDocument
-HTMLIFrameElement.contentWindow
-HTMLIFrameElement.loading
-HTMLIFrameElement.src
-HTMLImageElement.height
-HTMLImageElement.loading
-HTMLImageElement.naturalHeight
-HTMLImageElement.naturalWidth
-HTMLImageElement.sizes
-HTMLImageElement.src
-HTMLImageElement.srcset
-HTMLImageElement.width
-HTMLInputElement.defaultValue
-HTMLInputElement.form
-HTMLInputElement.max
-HTMLInputElement.maxLength
-HTMLInputElement.name
-HTMLInputElement.placeholder
-HTMLInputElement.selectionEnd
-HTMLInputElement.selectionStart
-HTMLInputElement.type
-HTMLInputElement.validity
-HTMLInputElement.value
-HTMLLinkElement.href
-HTMLLinkElement.media
-HTMLLinkElement.rel
-HTMLLinkElement.relList
-HTMLLinkElement.sheet
-HTMLMediaElement.buffered
-HTMLMediaElement.currentTime
-HTMLMediaElement.defaultPlaybackRate
-HTMLMediaElement.duration
-HTMLMediaElement.networkState
-HTMLMediaElement.playbackRate
-HTMLMediaElement.readyState
-HTMLMediaElement.textTracks
-HTMLMediaElement.volume
-HTMLMetaElement.content
-HTMLMetaElement.name
-HTMLOptionElement.text
-HTMLOptionElement.value
-HTMLOptionsCollection.length
-HTMLScriptElement.crossOrigin
-HTMLScriptElement.src
-HTMLScriptElement.text
-HTMLScriptElement.type
-HTMLSelectElement.form
-HTMLSelectElement.length
-HTMLSelectElement.name
-HTMLSelectElement.options
-HTMLSelectElement.selectedIndex
-HTMLSelectElement.value
-HTMLSourceElement.media
-HTMLStyleElement.sheet
-HTMLTableRowElement.insertCell
-HTMLTemplateElement.content
-HTMLTextAreaElement.defaultValue
-HTMLTextAreaElement.name
-HTMLTextAreaElement.value
-HTMLTitleElement.text
-HTMLVideoElement.videoHeight
-HTMLVideoElement.videoWidth
-NamedNodeMap.getNamedItem
-NamedNodeMap.length
-NamedNodeMap.removeNamedItem
-Node.appendChild
-Node.childNodes
-Node.cloneNode
-Node.compareDocumentPosition
-Node.firstChild
-Node.getRootNode
-Node.insertBefore
-Node.lastChild
-Node.nextSibling
-Node.nodeName
-Node.nodeType
-Node.nodeValue
-Node.ownerDocument
-Node.parentElement
-Node.parentNode
-Node.previousSibling
-Node.removeChild
-Node.replaceChild
-Node.textContent
-NodeIterator.nextNode
-NodeList.item
-NodeList.length
-PromiseRejectionEvent.reason
-Range.commonAncestorContainer
-Range.createContextualFragment
-Range.getBoundingClientRect
-ShadowRoot.host
-Text.splitText
-Text.wholeText
-TimeRanges.end
-TimeRanges.length
-TimeRanges.start
-TreeWalker.currentNode
-TreeWalker.nextNode
-TreeWalker.previousNode
-Window.document
-Window.event
-Window.frameElement
-Window.frames
-Window.getComputedStyle
-Window.length
-Window.requestAnimationFrame
-Window.self
-Window.structuredClone
-Window.window
-XPathResult.resultType
-XPathResult.singleNodeValue
-XPathResult.snapshotItem
-XPathResult.snapshotLength
+# All Leaked DOM Manipulation APIs
+
+| API Name    |
+| ----------- |
+| AbortController.signal |
+| Attr.name |
+| Attr.value |
+| CharacterData.data |
+| CustomElementRegistry.whenDefined |
+| CustomEvent.detail |
+| DOMException.code |
+| DOMException.message |
+| DOMException.name |
+| DOMImplementation.createHTMLDocument |
+| DOMMatrix.m41 |
+| DOMMatrix.m42 |
+| DOMParser.parseFromString |
+| DOMRect.height |
+| DOMRect.width |
+| DOMRect.x |
+| DOMRect.y |
+| DOMRectList.length |
+| DOMRectReadOnly.bottom |
+| DOMRectReadOnly.height |
+| DOMRectReadOnly.left |
+| DOMRectReadOnly.right |
+| DOMRectReadOnly.top |
+| DOMRectReadOnly.width |
+| DOMRectReadOnly.x |
+| DOMStringList.length |
+| DOMTokenList.length |
+| DOMTokenList.value |
+| Document.activeElement |
+| Document.adoptedStyleSheets |
+| Document.all |
+| Document.body |
+| Document.charset |
+| Document.children |
+| Document.compatMode |
+| Document.contentType |
+| Document.createAttribute |
+| Document.createComment |
+| Document.createDocumentFragment |
+| Document.createElement |
+| Document.createElementNS |
+| Document.createEvent |
+| Document.createRange |
+| Document.createTextNode |
+| Document.createTreeWalker |
+| Document.currentScript |
+| Document.defaultView |
+| Document.dir |
+| Document.doctype |
+| Document.documentElement |
+| Document.elementFromPoint |
+| Document.evaluate |
+| Document.featurePolicy |
+| Document.firstElementChild |
+| Document.forms |
+| Document.getElementById |
+| Document.getElementsByClassName |
+| Document.getElementsByName |
+| Document.getElementsByTagName |
+| Document.head |
+| Document.images |
+| Document.implementation |
+| Document.importNode |
+| Document.inputEncoding |
+| Document.lastModified |
+| Document.links |
+| Document.open |
+| Document.querySelector |
+| Document.querySelectorAll |
+| Document.readyState |
+| Document.scripts |
+| Document.scrollingElement |
+| Document.styleSheets |
+| Document.title |
+| Document.webkitVisibilityState |
+| DocumentFragment.children |
+| DocumentFragment.querySelector |
+| DocumentFragment.querySelectorAll |
+| DocumentType.name |
+| Element.attributes |
+| Element.childElementCount |
+| Element.children |
+| Element.classList |
+| Element.className |
+| Element.clientHeight |
+| Element.clientLeft |
+| Element.clientTop |
+| Element.clientWidth |
+| Element.closest |
+| Element.firstElementChild |
+| Element.getAttribute |
+| Element.getBoundingClientRect |
+| Element.getClientRects |
+| Element.getElementsByClassName |
+| Element.getElementsByTagName |
+| Element.id |
+| Element.innerHTML |
+| Element.insertAdjacentElement |
+| Element.lastElementChild |
+| Element.localName |
+| Element.namespaceURI |
+| Element.nextElementSibling |
+| Element.outerHTML |
+| Element.prefix |
+| Element.previousElementSibling |
+| Element.querySelector |
+| Element.querySelectorAll |
+| Element.scrollHeight |
+| Element.scrollLeft |
+| Element.scrollTop |
+| Element.scrollWidth |
+| Element.tagName |
+| ErrorEvent.colno |
+| ErrorEvent.error |
+| ErrorEvent.filename |
+| ErrorEvent.lineno |
+| ErrorEvent.message |
+| Event.currentTarget |
+| Event.eventPhase |
+| Event.srcElement |
+| Event.target |
+| Event.timeStamp |
+| Event.type |
+| HTMLAnchorElement.hash |
+| HTMLAnchorElement.host |
+| HTMLAnchorElement.href |
+| HTMLAnchorElement.origin |
+| HTMLAnchorElement.pathname |
+| HTMLAnchorElement.protocol |
+| HTMLAnchorElement.search |
+| HTMLButtonElement.type |
+| HTMLCollection.item |
+| HTMLCollection.length |
+| HTMLCollection.namedItem |
+| HTMLElement.accessKey |
+| HTMLElement.dataset |
+| HTMLElement.dir |
+| HTMLElement.innerText |
+| HTMLElement.lang |
+| HTMLElement.nonce |
+| HTMLElement.offsetHeight |
+| HTMLElement.offsetLeft |
+| HTMLElement.offsetParent |
+| HTMLElement.offsetTop |
+| HTMLElement.offsetWidth |
+| HTMLElement.onclick |
+| HTMLElement.outerText |
+| HTMLElement.style |
+| HTMLElement.tabIndex |
+| HTMLFormControlsCollection.namedItem |
+| HTMLFormElement.action |
+| HTMLFormElement.elements |
+| HTMLFormElement.enctype |
+| HTMLFormElement.length |
+| HTMLFormElement.name |
+| HTMLIFrameElement.contentDocument |
+| HTMLIFrameElement.contentWindow |
+| HTMLIFrameElement.loading |
+| HTMLIFrameElement.src |
+| HTMLImageElement.height |
+| HTMLImageElement.loading |
+| HTMLImageElement.naturalHeight |
+| HTMLImageElement.naturalWidth |
+| HTMLImageElement.sizes |
+| HTMLImageElement.src |
+| HTMLImageElement.srcset |
+| HTMLImageElement.width |
+| HTMLInputElement.defaultValue |
+| HTMLInputElement.form |
+| HTMLInputElement.max |
+| HTMLInputElement.maxLength |
+| HTMLInputElement.name |
+| HTMLInputElement.placeholder |
+| HTMLInputElement.selectionEnd |
+| HTMLInputElement.selectionStart |
+| HTMLInputElement.type |
+| HTMLInputElement.validity |
+| HTMLInputElement.value |
+| HTMLLinkElement.href |
+| HTMLLinkElement.media |
+| HTMLLinkElement.rel |
+| HTMLLinkElement.relList |
+| HTMLLinkElement.sheet |
+| HTMLMediaElement.buffered |
+| HTMLMediaElement.currentTime |
+| HTMLMediaElement.defaultPlaybackRate |
+| HTMLMediaElement.duration |
+| HTMLMediaElement.networkState |
+| HTMLMediaElement.playbackRate |
+| HTMLMediaElement.readyState |
+| HTMLMediaElement.textTracks |
+| HTMLMediaElement.volume |
+| HTMLMetaElement.content |
+| HTMLMetaElement.name |
+| HTMLOptionElement.text |
+| HTMLOptionElement.value |
+| HTMLOptionsCollection.length |
+| HTMLScriptElement.crossOrigin |
+| HTMLScriptElement.src |
+| HTMLScriptElement.text |
+| HTMLScriptElement.type |
+| HTMLSelectElement.form |
+| HTMLSelectElement.length |
+| HTMLSelectElement.name |
+| HTMLSelectElement.options |
+| HTMLSelectElement.selectedIndex |
+| HTMLSelectElement.value |
+| HTMLSourceElement.media |
+| HTMLStyleElement.sheet |
+| HTMLTableRowElement.insertCell |
+| HTMLTemplateElement.content |
+| HTMLTextAreaElement.defaultValue |
+| HTMLTextAreaElement.name |
+| HTMLTextAreaElement.value |
+| HTMLTitleElement.text |
+| HTMLVideoElement.videoHeight |
+| HTMLVideoElement.videoWidth |
+| NamedNodeMap.getNamedItem |
+| NamedNodeMap.length |
+| NamedNodeMap.removeNamedItem |
+| Node.appendChild |
+| Node.childNodes |
+| Node.cloneNode |
+| Node.compareDocumentPosition |
+| Node.firstChild |
+| Node.getRootNode |
+| Node.insertBefore |
+| Node.lastChild |
+| Node.nextSibling |
+| Node.nodeName |
+| Node.nodeType |
+| Node.nodeValue |
+| Node.ownerDocument |
+| Node.parentElement |
+| Node.parentNode |
+| Node.previousSibling |
+| Node.removeChild |
+| Node.replaceChild |
+| Node.textContent |
+| NodeIterator.nextNode |
+| NodeList.item |
+| NodeList.length |
+| PromiseRejectionEvent.reason |
+| Range.commonAncestorContainer |
+| Range.createContextualFragment |
+| Range.getBoundingClientRect |
+| ShadowRoot.host |
+| Text.splitText |
+| Text.wholeText |
+| TimeRanges.end |
+| TimeRanges.length |
+| TimeRanges.start |
+| TreeWalker.currentNode |
+| TreeWalker.nextNode |
+| TreeWalker.previousNode |
+| Window.document |
+| Window.event |
+| Window.frameElement |
+| Window.frames |
+| Window.getComputedStyle |
+| Window.length |
+| Window.requestAnimationFrame |
+| Window.self |
+| Window.structuredClone |
+| Window.window |
+| XPathResult.resultType |
+| XPathResult.singleNodeValue |
+| XPathResult.snapshotItem |
+| XPathResult.snapshotLength |
