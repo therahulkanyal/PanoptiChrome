@@ -1,0 +1,463 @@
+diff --git a/include/v8-value.h b/include/v8-value.h
+index c80ae06..0bc801e 100644
+--- a/include/v8-value.h
++++ b/include/v8-value.h
+@@ -29,6 +29,24 @@ class Uint32;
+  */
+ class V8_EXPORT Value : public Data {
+  public:
++
++// PanoptiChrome
++
++// +  void Print();
++
++  Isolate *GetIsolate();
++
++  bool IsHeapAllocated();
++
++  void SetTaint();
++  bool IsTainted();
++  std::string GetTaintData();
++  void SetTaintData(std::string taint_data);
++// +  std::vector<bool> GetTaintedBytes();
++
++// +  void PrintTaintSinkDetails(Isolate *isolate, FILE *out);
++
++
+   /**
+    * Returns true if this value is the undefined value.  See ECMA-262
+    * 4.3.10.
+diff --git a/src/api/api.cc b/src/api/api.cc
+index 86585cf..0dc10b4 100644
+--- a/src/api/api.cc
++++ b/src/api/api.cc
+@@ -3834,6 +3834,119 @@ bool ValueDeserializer::ReadRawBytes(size_t length, const void** data) {
+ 
+ // --- D a t a ---
+ 
++// PanoptiChrome
++Isolate* Value::GetIsolate() {
++  i::Handle<i::Object> object = Utils::OpenHandle(this);
++
++  if (object->IsHeapObject()) {
++    // i::Isolate* isolate = object->GetIsolate();
++    // i::Isolate* isolate = Isolate::Current();
++    // Isolate* isolate = i::Heap::FromWritableHeapObject(*this)->isolate();
++
++    i::Isolate* i_isolate;
++    if (object->InWritableSharedSpace()) {
++      i_isolate = i::Isolate::Current();
++    } else {
++      // It is safe to call GetIsolateFromWritableHeapObject because
++      // SupportsExternalization already checked that the object is writable.
++      i_isolate = i::GetIsolateFromWritableObject(i::HeapObject::cast(*object));
++    }
++
++    return reinterpret_cast<Isolate*>(i_isolate);
++  }
++  return NULL;
++}
++
++bool Value::IsHeapAllocated() {
++  i::Handle<i::Object> object = Utils::OpenHandle(this);
++  return object->IsHeapObject();
++}
++
++void Value::SetTaint() {
++  i::Handle<i::Object> object = Utils::OpenHandle(this);
++
++  // auto object = Utils::OpenHandle(this);
++  // auto i_isolate = object->GetIsolate();
++
++  // CHECK(object.IsHeapObject());  // No Smi.
++  if (object->IsHeapObject()) {
++    // i::Isolate* isolate = object->GetIsolate();
++    // i::Isolate* isolate = Isolate::Current();
++    // Isolate* isolate = i::Heap::FromWritableHeapObject(*this)->isolate();
++
++    i::Isolate* i_isolate;
++    // if (object->InWritableSharedSpace()) {
++    i_isolate = i::Isolate::Current();
++    // }
++    //  else {
++    //   // It is safe to call GetIsolateFromWritableHeapObject because
++    //   // SupportsExternalization already checked that the object is writable.
++    //   // i_isolate =
++    //   i::GetIsolateFromWritableObject(i::HeapObject::cast(*object));
++    //   i_isolate = i::GetIsolateFromHeapObject(i::HeapObject::cast(*object));
++
++    // }
++    i::JavaScriptStackFrameIterator it(i_isolate);
++    if (!it.done()) {
++      i_isolate->SetTaintForV8Object(object);
++    }
++  }
++}
++
++bool Value::IsTainted() {
++  i::Handle<i::Object> object = Utils::OpenHandle(this);
++  if (object->IsHeapObject()) {
++    i::Isolate* i_isolate;
++    // if (object->InWritableSharedSpace()) {
++      i_isolate = i::Isolate::Current();
++    // } 
++    // else {
++    //   // It is safe to call GetIsolateFromWritableHeapObject because
++    //   // SupportsExternalization already checked that the object is writable.
++    //   i_isolate = i::GetIsolateFromWritableObject(i::HeapObject::cast(*object));
++    // }
++    return i_isolate->IsV8ObjectTainted(object);
++  }
++  return false;
++}
++
++
++std::string Value::GetTaintData() {
++  i::Handle<i::Object> object = Utils::OpenHandle(this);
++  if (object->IsHeapObject()) {
++    i::Isolate* i_isolate;
++    // if (object->InWritableSharedSpace()) {
++      i_isolate = i::Isolate::Current();
++    // } 
++    // else {
++    //   // It is safe to call GetIsolateFromWritableHeapObject because
++    //   // SupportsExternalization already checked that the object is writable.
++    //   i_isolate = i::GetIsolateFromWritableObject(i::HeapObject::cast(*object));
++    // }
++    
++    return i_isolate->getObjectTaintSource(object);
++  }
++  return "";
++}
++
++void Value::SetTaintData(std::string taint_data){
++  i::Handle<i::Object> object = Utils::OpenHandle(this);
++  if (object->IsHeapObject()) {
++    i::Isolate* i_isolate;
++    // if (object->InWritableSharedSpace()) {
++      i_isolate = i::Isolate::Current();
++    // } 
++    // else {
++    //   // It is safe to call GetIsolateFromWritableHeapObject because
++    //   // SupportsExternalization already checked that the object is writable.
++    //   i_isolate = i::GetIsolateFromWritableObject(i::HeapObject::cast(*object));
++    // }
++    
++  i_isolate->SetTaintForV8Object(object, taint_data);
++  }
++  
++}
++
+ bool Value::FullIsUndefined() const {
+   i::Handle<i::Object> object = Utils::OpenHandle(this);
+   bool result = object->IsUndefined();
+diff --git a/src/builtins/builtins-api.cc b/src/builtins/builtins-api.cc
+index f160d7c..2a870b1 100644
+
+diff --git a/src/interpreter/bytecode-generator.cc b/src/interpreter/bytecode-generator.cc
+index 94c1594..331244f 100644
+--- a/src/interpreter/bytecode-generator.cc
++++ b/src/interpreter/bytecode-generator.cc
+@@ -3597,7 +3597,7 @@ void BytecodeGenerator::VisitObjectLiteral(ObjectLiteral* expr) {
+   object_literal_context_scope.SetEnteredIf(false);
+   builder()->LoadAccumulatorWithRegister(literal);
+ 
+-// PanoptiChrome :: changes for objectliteral
++  // PanoptiChrome :: changes for objectliteral
+   RegisterAllocationScope register_scope(this);
+ 
+   RegisterList runtime_call_args_fast =
+@@ -6235,7 +6235,7 @@ void BytecodeGenerator::VisitCall(Call* expr) {
+     // PanoptiChrome
+ 
+     // args format :: arguments, accumulator, start_position,
+-    // expression_position
++    // expression_position, property name (if property)
+ 
+     builder()->StoreAccumulatorInRegister(
+         register_allocator()->GrowRegisterList(&args));
+@@ -6252,9 +6252,29 @@ void BytecodeGenerator::VisitCall(Call* expr) {
+         .StoreAccumulatorInRegister(
+             register_allocator()->GrowRegisterList(&args));
+ 
++    if (call_type == Call::NAMED_PROPERTY_CALL ||
++        call_type == Call::KEYED_PROPERTY_CALL) {
++      if (expr->expression()->IsProperty() &&
++          expr->expression()->AsProperty()->key()->IsPropertyName()) {
++        builder()
++            ->LoadLiteral(expr->expression()
++                              ->AsProperty()
++                              ->key()
++                              ->AsLiteral()
++                              ->AsRawPropertyName())
++            .StoreAccumulatorInRegister(
++                register_allocator()->GrowRegisterList(&args));
++      }
++    }
++
+     builder()->CallRuntime(Runtime::kTaintAnalysis_OnVisitCallArguments, args);
+ 
+-    args = args.Truncate(args.register_count() - 3);
++    if (call_type == Call::NAMED_PROPERTY_CALL ||
++        call_type == Call::KEYED_PROPERTY_CALL) {
++      args = args.Truncate(args.register_count() - 4);
++    } else {
++      args = args.Truncate(args.register_count() - 3);
++    }
+     // remove stored accumulator, scope position, expr position
+ 
+     // PanoptiChrome :: changes end
+@@ -6328,6 +6348,17 @@ void BytecodeGenerator::VisitCall(Call* expr) {
+         ->LoadLiteral(Smi::FromInt(expr->position()))
+         .StoreAccumulatorInRegister(
+             register_allocator()->GrowRegisterList(&runtime_call_args_OVC));
++    // if (call_type == Call::NAMED_PROPERTY_CALL ||
++    //     call_type == Call::KEYED_PROPERTY_CALL) {
++    //   builder()
++    //       ->LoadLiteral(expr->expression()
++    //                         ->AsProperty()
++    //                         ->key()
++    //                         ->AsLiteral()
++    //                         ->AsRawPropertyName())
++    //       .StoreAccumulatorInRegister(
++    //           register_allocator()->GrowRegisterList(&runtime_call_args));
++    // }
+ 
+     builder()->CallRuntime(Runtime::kTaintAnalysis_OnVisitCallArguments,
+                            runtime_call_args_OVC);
+@@ -6407,12 +6438,11 @@ void BytecodeGenerator::VisitCall(Call* expr) {
+     builder()->StoreAccumulatorInRegister(
+         register_allocator()->GrowRegisterList(&runtime_call_args));
+ 
+-//store calle in register list
+-
+-      builder()->LoadAccumulatorWithRegister(callee);
+-      builder()->StoreAccumulatorInRegister(
+-          register_allocator()->GrowRegisterList(&runtime_call_args));
++    // store calle in register list
+ 
++    builder()->LoadAccumulatorWithRegister(callee);
++    builder()->StoreAccumulatorInRegister(
++        register_allocator()->GrowRegisterList(&runtime_call_args));
+ 
+     // args passed to the call
+     for (int i = 0; i < args.register_count(); i++) {
+@@ -6421,17 +6451,17 @@ void BytecodeGenerator::VisitCall(Call* expr) {
+           register_allocator()->GrowRegisterList(&runtime_call_args));
+     }
+ 
+-          // Scope position
+-      builder()
+-          ->LoadLiteral(Smi::FromInt(current_scope()->start_position()))
+-          .StoreAccumulatorInRegister(
+-              register_allocator()->GrowRegisterList(&runtime_call_args));
++    // Scope position
++    builder()
++        ->LoadLiteral(Smi::FromInt(current_scope()->start_position()))
++        .StoreAccumulatorInRegister(
++            register_allocator()->GrowRegisterList(&runtime_call_args));
+ 
+-      // expression position
+-      builder()
+-          ->LoadLiteral(Smi::FromInt(expr->position()))
+-          .StoreAccumulatorInRegister(
+-              register_allocator()->GrowRegisterList(&runtime_call_args));
++    // expression position
++    builder()
++        ->LoadLiteral(Smi::FromInt(expr->position()))
++        .StoreAccumulatorInRegister(
++            register_allocator()->GrowRegisterList(&runtime_call_args));
+ 
+     builder()->CallRuntime(Runtime::kTaintAnalysis_JustPrintArgs,
+                            runtime_call_args);
+@@ -6439,7 +6469,6 @@ void BytecodeGenerator::VisitCall(Call* expr) {
+   } else {
+     builder()->CallAnyReceiver(
+         callee, args, feedback_index(feedback_spec()->AddCallICSlot()));
+-
+   }
+ }
+ 
+diff --git a/src/runtime/runtime-taint.cc b/src/runtime/runtime-taint.cc
+index c062e1a..e0a0b71 100644
+--- a/src/runtime/runtime-taint.cc
++++ b/src/runtime/runtime-taint.cc
+@@ -497,7 +497,6 @@ class VisV8Logger {
+   std::ostream& out() const { return data->log; }
+ };
+ 
+-
+ RUNTIME_FUNCTION(Runtime_TaintAnalysis_JustPrintArgs) {
+   // IGNORE_NON_PROPAGATION_CONTEXTS(isolate, true, UNDEFINED_VALUE_HEAP);
+ 
+@@ -683,7 +682,7 @@ RUNTIME_FUNCTION(Runtime_TaintAnalysis_OnVisitPropertyCall) {
+     std::cout << "\n0. Return Value :: ";
+     return_value->Print();
+     std::cout << "1. Home Object :: ";
+-    // home_object->Print();
++    home_object->Print();
+     std::cout << "Arguments :: ";
+     for (int i = 2; i < args.length() - 3; i++)
+       std::cout << std::endl << i << ". " << args.at(i);
+@@ -808,32 +807,93 @@ RUNTIME_FUNCTION(Runtime_TaintAnalysis_OnVisitCallArguments) {
+   // if (!isolate->ShouldTaintBusiness()) return UNDEFINED_VALUE_HEAP;
+ 
+   HandleScope handle_scope(isolate);
+-  Handle<Object> backup_obj = args.at(args.length() - 3);
++  Handle<Object> obj = args.at(0);
++  Handle<Object> backup_obj;
++  ScopeDFG* dfg;
++  int scope_position;
++  int expr_position;
++  std::string obj_name_str, prop_name_str;
+ 
+-  IGNORE_NON_PROPAGATION_CONTEXTS(isolate, true, *backup_obj);
++  Handle<Object> last_arg = args.at(args.length() - 1);
+ 
+-  auto scope_position = args.smi_value_at(args.length() - 2);
+-  auto expr_position = args.smi_value_at(args.length() - 1);
++  if (last_arg->IsSmi()) {
++    // normal case : no property call
++    backup_obj = args.at(args.length() - 3);
++
++    IGNORE_NON_PROPAGATION_CONTEXTS(isolate, true, *backup_obj);
++
++    scope_position = args.smi_value_at(args.length() - 2);
++    expr_position = args.smi_value_at(args.length() - 1);
+ 
+ #ifdef DEBUG
+-  if (isolate->inRKDebugMode()) {
+-    std::cout << "\n\nRuntime_OnVisitCallArguments :: " << args.length();
++    if (isolate->inRKDebugMode()) {
++      std::cout << "\n\nRuntime_OnVisitCallArguments :: " << args.length();
++
++      std::cout << "\nArguments :: ";
++      for (int i = 0; i < args.length() - 3; i++) {
++        std::cout << "\nArg " << i << ". " << args.at(i) << std::flush;
++      }
++
++      std::cout << std::endl << args.length() - 3 << ". Backup Object :: ";
++      backup_obj->Print();
+ 
+-    std::cout << "\nArguments :: ";
+-    for (int i = 0; i < args.length() - 3; i++) {
+-      std::cout << "\nArg " << i << ". " << args.at(i) << std::flush;
++      std::cout << args.length() - 2
++                << ". Scope Position :: " << scope_position;
++      std::cout << std::endl
++                << args.length() - 1
++                << ". Expression Position :: " << expr_position << std::endl
++                << std::flush;
+     }
++#endif
++  } else {
++    // property call
++    Handle<JSReceiver> rcvr = handle(JSReceiver::cast(*obj), isolate);
++    Handle<String> ctor = JSReceiver::GetConstructorName(isolate, rcvr);
+ 
+-    std::cout << std::endl << args.length() - 3 << ". Backup Object :: ";
+-    // backup_obj->Print();
++    obj_name_str = ctor->ToCString().get();
+ 
+-    std::cout << args.length() - 2 << ". Scope Position :: " << scope_position;
+-    std::cout << std::endl
+-              << args.length() - 1
+-              << ". Expression Position :: " << expr_position << std::endl
+-              << std::flush;
+-  }
++    backup_obj = args.at(args.length() - 4);
++
++    IGNORE_NON_PROPAGATION_CONTEXTS(isolate, true, *backup_obj);
++
++    scope_position = args.smi_value_at(args.length() - 3);
++    expr_position = args.smi_value_at(args.length() - 2);
++    Handle<String> property_name =
++        handle(String::cast(*args.at(args.length() - 1)), isolate);
++
++    prop_name_str = property_name->ToCString().get();
++
++#ifdef DEBUG
++    if (isolate->inRKDebugMode()) {
++      std::cout << "\n\nRuntime_OnVisitCallArguments :: " << args.length();
++
++      std::cout << "\nArguments :: ";
++      for (int i = 0; i < args.length() - 4; i++) {
++        std::cout << "\nArg " << i << ". " << args.at(i) << std::flush;
++      }
++
++      std::cout << std::endl << args.length() - 4 << ". Backup Object :: ";
++      backup_obj->Print();
++
++      std::cout << args.length() - 3
++                << ". Scope Position :: " << scope_position;
++      std::cout << std::endl
++                << args.length() - 2
++                << ". Expression Position :: " << expr_position << std::endl
++                << std::flush;
++      std::cout << std::endl << args.length() - 1 << ". Property name ::";
++      property_name->Print();
++    }
+ #endif
++  }
++
++  // args[1].Print();
++  // std::cout<<"\nARGS :: " <<args.at(1);
++  // std::cout<<"\nADDress :: " << args.address_of_arg_at(1);
++
++  // args[1].ptr = args[2].ptr();
++
++  // std::cout << "\nMaybe Object name::" << obj_name_str << std::endl;
+ 
+   JavaScriptStackFrameIterator it(isolate);
+   Handle<JSFunction> function(it.frame()->function(), isolate);
+@@ -841,7 +901,7 @@ RUNTIME_FUNCTION(Runtime_TaintAnalysis_OnVisitCallArguments) {
+     ParseInfo* info_ = isolate->GetCompilationInfo(function);
+     if (info_ == NULL) return *backup_obj;
+ 
+-    ScopeDFG* dfg = isolate->GetScopeDFG(info_, scope_position);
++    dfg = isolate->GetScopeDFG(info_, scope_position);
+     if (dfg != NULL) dfg->PropagateTaint(it.frame());
+ 
+     CallLocator locator(isolate, info_->scope(), expr_position);
+@@ -857,13 +917,13 @@ RUNTIME_FUNCTION(Runtime_TaintAnalysis_OnVisitCallArguments) {
+ #ifdef DEBUG
+         if (isolate->inRKDebugMode()) {
+           std::cout << "\nPrinting Located Arguments :: " << std::endl;
+-          // (t_args->at(i))->Print(isolate);
++          (t_args->at(i))->Print(isolate);
+           std::cout << std::flush;
+         }
+ #endif
+ 
+         if (checker.Check(t_args->at(i))) {
+-          Handle<Object> obj = args.at(i);
++          Handle<Object> obj = args.at(i+1);
+ 
+           if (obj->IsSmi()) {
+             std::cout << "\nVisitArguments -> VisitAndPushIntoRegisterList "
+@@ -873,6 +933,25 @@ RUNTIME_FUNCTION(Runtime_TaintAnalysis_OnVisitCallArguments) {
+           if (!obj->IsSmi()) {
+             isolate->SetTaintForV8Object(obj);
+             checker.PopulatePropagatedFrom(obj);
++
++            // if i is 2, obj name is Storage, property name is setItem, then
++            // add _tainted_<taint sources> to  the string
++
++            if (i == 1 && !last_arg->IsSmi() && args.at(2)->IsString() &&
++                obj_name_str == "Storage" && prop_name_str == "setItem") {
++              Handle<Object> str;
++              std::string final_source;
++
++              final_source = (String::cast(*(args.at(2)))).ToCString().get();
++              // add taint token to final_source variable
++              final_source += "_tainted";
++              final_source += isolate->getObjectTaintSource(obj);
++              str = isolate->factory()->NewStringFromAsciiChecked(
++                  final_source.c_str());
++
++              // String  test_str = "test";
++              *(args.address_of_arg_at(2)) = str->ptr();
++            }
+           }
+         }
+       }
