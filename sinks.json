@@ -1,0 +1,93 @@
+[
+  {
+    "XMLHttpRequest": {
+      "includedProperties": [
+        "send"
+      ]
+    }
+  },
+  {
+    "Client": {
+      "includedProperties": [
+        "postMessage"
+      ]
+    }
+  },
+  {
+    "DedicatedWorkerGlobalScope": {
+      "includedProperties": [
+        "postMessage"
+      ]
+    }
+  },
+  {
+    "Document": {
+      "includedProperties": [
+        "cookie"
+      ]
+    }
+  },
+  {
+    "IDBObjectStore": {
+      "includedProperties": [
+        "put",
+        "add"
+
+      ]
+    }
+  },
+  {
+    "MessagePort": {
+      "includedProperties": [
+        "postMessage"
+      ]
+    }
+  },
+  {
+    "Navigator": {
+      "includedProperties": [
+        "sendBeacon"
+      ]
+    }
+  },
+  {
+    "RTCDataChannel": {
+      "includedProperties": [
+        "send"
+      ]
+    }
+  },
+  {
+    "ServiceWorker": {
+      "includedProperties": [
+        "postMessage"
+      ]
+    }
+  },
+  {
+    "WebSocket": {
+      "includedProperties": [
+        "send"
+      ]
+    }
+  },
+  {
+    "Window": {
+      "includedProperties": [
+        "indexedDB",
+        "localStorage",
+        "openDatabase",
+        "postMessage",
+        "sessionStorage", 
+        "fetch"
+      ]
+    }
+  },
+  {
+    "Worker": {
+      "includedProperties": [
+        "postMessage"
+      ]
+    }
+  }
+]
